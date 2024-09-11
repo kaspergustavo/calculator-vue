@@ -1,47 +1,22 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="calculator mw-400 m-50 p-20 rounded-">
+    <h2>Calculadora do Gustavo</h2>
+    <input type="number" v-model.number="numero1" placeholder="Digite o primeiro número">
+    <input type="number" v-model.number="numero2" placeholder="Digite o segundo número">
+    <select v-model="operacao">
+      <option value="soma">Somar (+)</option>
+      <option value="subtracao">Subtrair (-)</option>
+      <option value="multiplicacao">Multiplicar (x)</option>
+      <option value="divisao">Dividir (÷)</option>
+    </select>
+    <h3>Resultado: {{ resultado }}</h3>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
